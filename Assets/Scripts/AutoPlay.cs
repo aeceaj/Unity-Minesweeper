@@ -63,7 +63,7 @@ public class AutoPlay : MonoBehaviour
     }
 
     /// <summary>
-    /// 在所有确定的方格周围插旗
+    /// Flag all the identified mines.
     /// </summary>
     private void SetFlag()
     {
@@ -85,7 +85,7 @@ public class AutoPlay : MonoBehaviour
     }
 
     /// <summary>
-    /// 将所有已排完的方格周围翻开
+    /// Reveal all the covered squares around the digit squares whose mines are all flagged.
     /// </summary>
     private void RevealAll()
     {
@@ -107,7 +107,7 @@ public class AutoPlay : MonoBehaviour
     }
 
     /// <summary>
-    /// 在所有标记组合中均存在的格子可标记为雷
+    /// A square can be identified as mine if it's flagged in all possible combinations.
     /// </summary>
     private void DeduceMark()
     {
@@ -137,7 +137,7 @@ public class AutoPlay : MonoBehaviour
     }
 
     /// <summary>
-    /// 若有格子在所有标记组合下均AllFound，且有临近格子不存在于组合之中，则可将其翻开
+    /// Reveal the squares around the digit squares which get AllFound() with all the possible combinations.
     /// </summary>
     private void DeduceReveal()
     {
@@ -199,7 +199,7 @@ public class AutoPlay : MonoBehaviour
     }
 
     /// <summary>
-    /// 剩余格子数和雷数相等，则可全部标记
+    /// Flag the rest covered squares if the number equals to rest mines.
     /// </summary>
     private void Match()
     {
@@ -217,7 +217,7 @@ public class AutoPlay : MonoBehaviour
     }
 
     /// <summary>
-    /// 随机翻开一个格子
+    /// Random reveal.
     /// </summary>
     private void RandomReveal()
     {

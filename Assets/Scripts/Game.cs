@@ -38,6 +38,10 @@ public static class Game
         return new Vector2Int(x, y);
     }
 
+    /// <summary>
+    /// Randomly spawn all the mines. The first square clicked won't be a mine.
+    /// </summary>
+    /// <param name="crd">The coordinate of the first square clicked.</param>
     public static void SpawnMine(Vector2Int crd)
     {
         int x, y;
@@ -52,6 +56,10 @@ public static class Game
         }
     }
 
+    /// <summary>
+    /// Spawn mines and digits.
+    /// </summary>
+    /// <param name="crd">The coordinate of the first square clicked.</param>
     public static void InitiateSpawn(Vector2Int crd)
     {
         SpawnMine(crd);

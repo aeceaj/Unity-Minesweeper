@@ -13,6 +13,9 @@ public class Starting : MonoBehaviour
         Game.NumberPanel = GameObject.Find("PanelCanvas/NumberPanel").GetComponentInChildren<Text>();
     }
 
+    /// <summary>
+    /// Store a square's adjacent squares in Adjacent.
+    /// </summary>
     private void Link()
     {
         for (int i = 0; i < Game.Width; i++)

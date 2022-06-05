@@ -133,6 +133,10 @@ public class Square : MonoBehaviour
         return rest;
     }
 
+    /// <summary>
+    /// Whether the mines around are all identified.
+    /// </summary>
+    /// <returns></returns>
     public bool AllFound()
     {
         return RestMine() == 0;
@@ -155,7 +159,7 @@ public class Square : MonoBehaviour
     }
 
     /// <summary>
-    /// 获取当前状态下可行的所有标记组合
+    /// Get all the possible combinations of flags.
     /// </summary>
     /// <returns></returns>
     public Square[][] GetPossibleComs()
@@ -170,7 +174,6 @@ public class Square : MonoBehaviour
         ptr[restM - 1]--;
         int comNum = MathFunc.Combine(restC, restM);
 
-        // 记录所有可能的标记组合
         Square[][] possibleComs = new Square[comNum][];
         for (int i = 0; i < comNum; i++)
         {
@@ -181,7 +184,7 @@ public class Square : MonoBehaviour
                 possibleComs[i][j] = GetRestCovered()[ptr[j]];
             }
 
-            // 测试组合是否可行，若使得旗数大于雷数则不可行，将该组合置为null
+            // A combination is impossible if it makes another digit square get more flags.
             TryMark(possibleComs[i]);
             bool isAvailable = true;
             foreach (Square sq in possibleComs[i])
